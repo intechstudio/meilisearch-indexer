@@ -27,9 +27,9 @@ jobs:
         ls -la
     
     - name: create env
-        run: |
-          touch .env
-          echo PATH_TO_DOCUMENTS=./ >> .env
-          echo MEILI_INDEX=grid-documentation >> .env
-          echo MEILI_HOST=${{secrets.MEILI_HOST}} >> .env
-          echo MEILI_ADMIN_KEY=${{secrets.MEILI_ADMIN_KEY}} >> .env
+      run: |
+        touch .env
+        echo PATH_TO_DOCUMENTS=./ >> .env
+        echo MEILI_INDEX=grid-documentation >> .env
+        echo MEILI_HOST=${{secrets.MEILI_HOST}} >> .env
+        echo MEILI_ADMIN_KEY=${{secrets.MEILI_ADMIN_KEY}} >> .env
