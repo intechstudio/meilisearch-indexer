@@ -25,6 +25,8 @@ jobs:
     - name: show contents
       run: |
         ls -la
+        ls -la main
+        ls -la documentation
     
     - name: create env
       run: |
