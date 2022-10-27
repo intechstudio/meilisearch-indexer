@@ -46,6 +46,6 @@ jobs:
       run: | 
         cd main
         npm i
-        npm build
-        npm index
+        npm run build
+        npm run index
   
