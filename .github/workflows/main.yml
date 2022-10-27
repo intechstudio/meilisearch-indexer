@@ -27,11 +27,25 @@ jobs:
         ls -la
         ls -la main
         ls -la documentation
-    
+      
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        
     - name: create env
       run: |
+        cd main
         touch .env
-        echo PATH_TO_DOCUMENTS=./ >> .env
+        echo PATH_TO_DOCUMENTS=../documentation/docs/ >> .env
         echo MEILI_INDEX=grid-documentation >> .env
         echo MEILI_HOST=${{secrets.MEILI_HOST}} >> .env
         echo MEILI_ADMIN_KEY=${{secrets.MEILI_ADMIN_KEY}} >> .env
+    
+    - name: build and run indexer script
+      run: | 
+        cd main
+        npm i
+        npm build
+        npm index
+  
